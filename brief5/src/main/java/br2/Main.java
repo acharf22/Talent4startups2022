@@ -27,8 +27,8 @@ public class Main {
 	}
 	
 	public static void miss_jour() {
-		System.out.println(" ===============) Mise à jour (===============");
-		System.out.println("     Quel est l'Id du candidat que vous souhaitez mettre à jour  ?          ");
+		System.out.println(" ===============) Mise Ã  jour (===============");
+		System.out.println("     Quel est l'Id du candidat que vous souhaitez mettre Ã  jour  ?          ");
 		candidat.setId(scan.next());
 		System.out.println("              Veuillez mettre un :               ");
 		System.out.println("                     Nom                          ");
@@ -55,7 +55,7 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		
 		
-		int choi;
+		int choix;
 		CandidatDao use = new CandidatDao();
 		
 		Connexion conn = new Connexion();
@@ -65,35 +65,35 @@ public class Main {
 			System.out.println("                                                                 ");
 			System.out.println("                                                                 ");
 			System.out.println("              //                                      \\         ");
-			System.out.println("             //   Liste des opérations à effectuer     \\        ");
+			System.out.println("             //   Liste des opÃ©rations Ã  effectuer     \\        ");
 			System.out.println("            // =========================================\\       ");
 			System.out.println("           //                                            \\       ");
 			System.out.println("          //                                              \\       ");
 			System.out.println("                                                                 ");
 			System.out.println("                                                                 ");
 			System.out.println("                                                                 ");
-			System.out.println("       Merci de choisir le numéro qui correspond à votre opération préférée :");
+			System.out.println("       Merci de choisir le numÃ©ro qui correspond Ã  votre opÃ©ration prÃ©fÃ©rÃ©e :");
 			System.out.println("                                                                 ");
 			System.out.println("                         1-Ajouter      ");
 			System.out.println("                         2-Afficher      ");
-			System.out.println("                         3-Mettre à jour  ");
+			System.out.println("                         3-Mettre Ã  jour  ");
 			System.out.println("                         4-Supprimer      ");
 			System.out.println("                         0-Quitter          ");
 			System.out.println(" ---------------------------------------------------------------------");
 			
 			do {
-				choi = scan.nextInt();
-			}while(choi < 0 && choi > 4);
+				choix = scan.nextInt();
+			}while(choix < 0 && choix > 4);
 			
 			candidat = new Candidat();
 			
-			switch(choi) {
+			switch(choix) {
 				case 1 : ajouter();
-				System.out.println("Ajout bien effectué");
+				System.out.println("Ajout bien effectuÃ©");
 					use.Create(candidat);
 				break;
 				case 2 : 
-					System.out.println(" Voici les données demandées");
+					System.out.println(" Voici les donnÃ©es demandÃ©es");
 					use.Read(candidat);
 				break;
 				case 3 : 
@@ -102,15 +102,15 @@ public class Main {
 				break;
 				case 4 : 
 					Supprimer();
-					System.out.println("Suppression bien effectuée");
+					System.out.println("Suppression bien effectuÃ©e");
 					use.Delete(candidat);
 				break;
 				case 0 : System.out.println("-----------------------Merci-----------------------");
 						conn.connect().close();
 				break;
 			}
-		}while(choi != 0);
-		
+		}while(choix != 0);
+			
 		
 	}
   
